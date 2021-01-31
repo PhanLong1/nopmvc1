@@ -1,0 +1,33 @@
+{% extends "pages/layout.html" %}
+
+{% block title %}
+Student
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1 class="text-center text-light bg-primary">CỬA HÀNG TIỆN LỢI</h1>
+<p>
+   <a class="btn btn-outline-danger" href="http://127.0.0.1:8000/admin/myapp/student/add/">
+       create pages
+   </a>
+</p>
+    <table class="table table-bordered table table-secondary">
+        <tr class="table-warning text-center">
+        <th>Name</th>
+        <th>Price</th>
+        <th>date of manufacture</th>
+        <th>expiration date</th>
+        </tr>
+
+{% for item in Student %}
+        <tr>
+            <td>{{ item.name}}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.manufacturing }}</td>
+            <td>{{ item.expired }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
